@@ -1,0 +1,55 @@
+CONJECTUREPANEL Conjectures
+PROOF "A→H, B→H, C→H ⊢ (A∨B∨C)→H"
+INFER A→H,
+     B→H,
+     C→H 
+     ⊢ (A∨B∨C)→H 
+FORMULAE
+0 H,
+1 C,
+2 C→H,
+3 B,
+4 B→H,
+5 A,
+6 A→H,
+7 A∨B,
+8 A∨B∨C 
+IS
+SEQ ("→ intro"[A,B\8,0]) ("∨ elim"[A,B,C\7,1,0]) (hyp[A\8]) ("∨ elim"[A,B,C\5,3,0]) (hyp[A\7]) (cut[B,C\0,0]) ("→ elim"[A,B\5,0]) (hyp[A\6]) (hyp[A\5]) (hyp[A\0]) (cut[B,C\0,0]) ("→ elim"[A,B\3,0]) (hyp[A\4]) (hyp[A\3]) (hyp[A\0]) (cut[B,C\0,0]) ("→ elim"[A,B\1,0]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL Conjectures
+PROOF "(¬B∧¬P∧E)∨(¬B∧P∧¬E)∨(B∧¬P∧¬E) ⊢ ¬B∧¬P→E"
+INFER (¬B∧¬P∧E)∨(¬B∧P∧¬E)∨(B∧¬P∧¬E)
+     ⊢ ¬B∧¬P→E 
+FORMULAE
+0 ⊥,
+1 E,
+2 ¬B,
+3 B,
+4 B∧¬P,
+5 ¬P,
+6 B∧¬P∧¬E,
+7 ¬E, 
+8 P,
+9 ¬B∧P,
+10 ¬B∧P∧¬E,
+11 ¬B∧¬P∧E,
+12 ¬B∧¬P,
+13 ¬B∧¬P∧E∨¬B∧P∧¬E,
+14 (¬B∧¬P∧E)∨(¬B∧P∧¬E)∨B∧¬P∧¬E,
+15 (¬B∧¬P∧E)∨(¬B∧P∧¬E),
+16 (¬B∧¬P∧E)∨(¬B∧P∧¬E)∨(B∧¬P∧¬E)
+IS
+SEQ ("→ intro"[A,B\12,1]) (cut[B,C\5,1]) (LAYOUT "∧ elim" (0) ("∧ elim(R)"[A,B\2,5]) (hyp[A\12])) (cut[B,C\2,1]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\2,5]) (hyp[A\12])) ("∨ elim"[A,B,C\15,6,1]) (hyp[A\14]) ("∨ elim"[A,B,C\11,10,1]) (hyp[A\13]) (cut[B,C\1,1]) (LAYOUT "∧ elim" (0) ("∧ elim(R)"[A,B\12,1]) (hyp[A\11])) (hyp[A\1]) (cut[B,C\9,1]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\9,7]) (hyp[A\10])) (cut[B,C\8,1]) (LAYOUT "∧ elim" (0) ("∧ elim(R)"[A,B\2,8]) (hyp[A\9])) (cut[B,C\0,1]) ("¬ elim"[B\8]) (hyp[A\8]) (hyp[A\5]) ("contra (constructive)"[B\1]) (hyp[A\0]) (cut[B,C\4,1]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\4,7]) (hyp[A\6])) (cut[B,C\3,1]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\3,5]) (hyp[A\4])) (cut[B,C\0,1]) ("¬ elim"[B\3]) (hyp[A\3]) (hyp[A\2]) ("contra (constructive)"[B\1]) (hyp[A\0])
+END
+CONJECTUREPANEL Conjectures
+CURRENTPROOF "P, ¬A∧¬B∧¬C, (P∧A)→D, (P∧B)→D, (P∧C)→D ⊢ ¬D"
+INFER P,
+     ¬A∧¬B∧¬C,
+     (P∧A)→D,
+     (P∧B)→D,
+     (P∧C)→D 
+     ⊢ ¬D 
+IS
+NEXTGOAL
+END
